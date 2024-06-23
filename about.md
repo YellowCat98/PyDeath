@@ -18,7 +18,7 @@ To add a script, follow the steps:
 4. Select the file you created.
 5. You're done!!!
 
-- PyDeath has some bindings implemented in it, check them out all (here.)[https://github.com/YellowCat98/PyDeath/blob/main/src/pybindings.cpp]
+- PyDeath has some bindings implemented in it, check them out all [here.](https://github.com/YellowCat98/PyDeath/blob/main/src/pybindings.cpp)
 - How to use them
 ```python
 import sys
