@@ -20,8 +20,9 @@ class $modify(PlayerObject) {
 
         std::string code = R"(
 import random
+list = ["You are dead!", "You have DIED...", "the PlayerObject::playerDestroyed function has been called"]
 
-value = random.randint(1, 1000000)
+value = random.Choice(list)
 print(value)
 )";
         try {
