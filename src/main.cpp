@@ -8,18 +8,21 @@
 #include <iostream>
 #include <pybind11/pybind11.h>
 #include <pybind11/embed.h>
+#include <Geode/modify/PlayerObject.hpp>
 
 using namespace geode::prelude;
 namespace py = pybind11;
 
-class $modify(MenuLayer) {
-    void onMoreGames(CCObject*) {
+class $modify(PlayerObject) {
+    void playerDestroyed(bool p0) {
 
         py::scoped_interpreter guard{};
 
         std::string code = R"(
-import sys
-print("Updated Python sys.path: ", sys.path)
+import random
+
+value = random.randint(1, 1000000)
+print(value)
 )";
         try {
             py::exec(code);

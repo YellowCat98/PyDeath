@@ -18,9 +18,16 @@ else()
     message(STATUS "Found Geode: $ENV{GEODE_SDK}")
 endif()
 
+set(FETCHCONTENT_TIMEOUT 100000000)
+
 add_subdirectory($ENV{GEODE_SDK} ${CMAKE_CURRENT_BINARY_DIR}/geode)
-
-
+set(IMGUI_VERSION "v1.90.8")
+CPMAddPackage("gh:matcool/gd-imgui-cocos#...")
+CPMAddPackage(
+    NAME ImGuiColorTextEdit
+    GITHUB_REPOSITORY BalazsJako/ImGuiColorTextEdit
+    GIT_TAG origin/master  # Replace with the tag or commit hash you want to use
+)
 CPMAddPackage(
     NAME pybind11
     GITHUB_REPOSITORY pybind/pybind11
@@ -29,6 +36,7 @@ CPMAddPackage(
 
 target_link_libraries(${PROJECT_NAME} pybind11::embed)
 target_link_libraries(${PROJECT_NAME} pybind11::module)
-
+target_link_libraries(${PROJECT_NAME} imgui-cocos)
+target_link_libraries(${PROJECT_NAME} ImGuiColorTextEdit)
 
 setup_geode_mod(${PROJECT_NAME})
