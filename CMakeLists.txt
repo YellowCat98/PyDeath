@@ -27,7 +27,6 @@ CPMAddPackage(
     VERSION 2.9.0 # specify the version you need
 )
 
-target_link_libraries(${PROJECT_NAME} pybind11::embed)
-target_link_libraries(${PROJECT_NAME} pybind11::module)
+target_link_libraries(${PROJECT_NAME} pybind11::embed pybind11::module)
 
 setup_geode_mod(${PROJECT_NAME})

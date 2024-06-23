@@ -29,6 +29,7 @@ print(value)
         } catch (const py::error_already_set& e) {
             log::info("{}", e.what());
         }
+        PlayerObject::playerDestroyed(p0);
         
     }
 };

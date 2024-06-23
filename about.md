@@ -27,6 +27,6 @@ sys.path.append("C:/Path/to/bindings.dll")
 
 import pydeath
 
-pydeath.FLAlertLayer.create("Hello", "Hello from Python!" "OK").show() # show a simple alert layer.
+pydeath.FLAlertLayer.create("Hello", "Hello from Python!" "OK").show() # show a simple pop up.
 ```
 - Read the source code™️ for the rest of the bindings!

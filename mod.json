@@ -10,5 +10,12 @@
 	"name": "PyDeath",
 	"version": "v1.0.0",
 	"developer": "YellowCar98",
-	"description": "Runs a script whenever you DIE..."
+	"description": "Runs a script whenever you DIE...",
+	"settings": {
+		"select-pyfile": {
+			"name": "Select file",
+			"type": "file",
+			"default": ""
+		}
+	}
 }
