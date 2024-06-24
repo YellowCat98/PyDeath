@@ -18,5 +18,6 @@ To add a script, follow the steps:
 4. Select the file you created.
 5. You're done!!!
 
-Note:
-    You NEED to have Python installed, in order to use a module, you can just import it normally like in the default script.
+# Using python modules
+- PyDeath requires python to be installed and it uses it as the interpreter.
+- Which means that you can just use `pip` to install modules and import them like normal.

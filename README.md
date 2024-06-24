@@ -8,7 +8,7 @@
 import random
 list = ["You are dead!", "You have DIED...", "the PlayerObject::playerDestroyed function has been called"]
 
-value = random.Choice(list)
+value = random.choice(list)
 print(value) # uses stdout.
 ```
 To add a script, follow the steps:
@@ -18,15 +18,6 @@ To add a script, follow the steps:
 4. Select the file you created.
 5. You're done!!!
 
-- PyDeath has some bindings implemented in it, check them out all [here.](https://github.com/YellowCat98/PyDeath/blob/main/src/pybindings.cpp)
-- How to use them
-```python
-import sys
-
-sys.path.append("C:/Path/to/bindings.dll")
-
-import pydeath
-
-pydeath.FLAlertLayer.create("Hello", "Hello from Python!" "OK").show() # show a simple pop up.
-```
-- Read the source code™️ for the rest of the bindings!
+# Using python modules
+- PyDeath requires python to be installed and it uses it as the interpreter.
+- Which means that you can just use `pip` to install modules and import them like normal.
