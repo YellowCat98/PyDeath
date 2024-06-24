@@ -20,6 +20,7 @@ using PyScript = Task<uint64_t, int>;
 
 PyScript runScript(std::string code) {
     return PyScript::run([code](auto progress, auto called) -> PyScript::Result {
+        py::scoped_interpreter guard{};
         try {
             py::exec(code);
             return 0;
@@ -45,10 +46,7 @@ class $modify(PlayerObject) {
 struct Fields {
     EventListener<PyScript> gameListener;
 };
-
     void playerDestroyed(bool p0) {
-
-        py::scoped_interpreter guard{};
 
         std::string code;
         if (getPyScript().empty()) {
