@@ -66,7 +66,5 @@ print(value)
             log::info("Progressing (or not)");
         });
         m_fields->gameListener.setFilter(runScript(code));
-        PlayerObject::playerDestroyed(p0);
-        
     }
 };
