@@ -28,7 +28,7 @@ PyScript runScript(std::string code) {
             log::info("Python Error:\n{}", e.what());
             return 1;
         }
-    }, "Run the python script idk what to tell you");
+    });
 }
 
 std::string getPyScript() {
@@ -61,7 +61,7 @@ print(value)
             code = getPyScript();
         }
         m_fields->gameListener.bind([](PyScript::Event* event) {
-            log::info("Progressing (or not)");
+            
         });
         m_fields->gameListener.setFilter(runScript(code));
     }
