@@ -9,7 +9,6 @@ project(PyDeath VERSION 1.0.0)
 # Set up the mod binary
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
-    src/pybindings.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

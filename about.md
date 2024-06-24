@@ -18,15 +18,5 @@ To add a script, follow the steps:
 4. Select the file you created.
 5. You're done!!!
 
-- PyDeath has some bindings implemented in it, check them out all [here.](https://github.com/YellowCat98/PyDeath/blob/main/src/pybindings.cpp)
-- How to use them
-```python
-import sys
-
-sys.path.append("C:/Path/to/bindings.dll")
-
-import pydeath
-
-pydeath.FLAlertLayer.create("Hello", "Hello from Python!" "OK").show() # show a simple pop up.
-```
-- Read the source code™️ for the rest of the bindings!
+Note:
+    You NEED to have Python installed, in order to use a module, you can just import it normally like in the default script.
