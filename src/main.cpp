@@ -23,10 +23,8 @@ PyScript runScript(std::string code) {
         py::scoped_interpreter guard{};
         try {
             py::exec(code);
-            return 0;
         } catch (const py::error_already_set& e) {
             log::info("Python Error:\n{}", e.what());
-            return 1;
         }
     });
 }

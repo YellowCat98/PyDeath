@@ -21,3 +21,16 @@ To add a script, follow the steps:
 # Using python modules
 - PyDeath requires python to be installed and it uses it as the interpreter.
 - Which means that you can just use `pip` to install modules and import them like normal.
+
+# PyDeath-specific enhancements:
+- PyDeath introduces special placeholders that get replaced with in-game values:
+  - `{PLAYER_X}`: Player's X Position
+  - `{PLAYER_Y}`: Player's Y positon
+
+## Example:
+```python
+print("Died at X {PLAYER_X} and Y {PLAYER_Y}")
+# saying that the X position of the player is 50
+# and the Y position of the player is 0.
+# PyDeath will automatically change the code above to:
+print("Died at X 50 and Y 0")
