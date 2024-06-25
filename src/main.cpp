@@ -20,7 +20,6 @@ using PyScript = Task<uint64_t, int>;
 
 PyScript runScript(std::string code) {
     return PyScript::run([code](auto progress, auto called) -> PyScript::Result {
-        py::scoped_interpreter guard{}; // hopefully initializing the interpreter before trying to execute works
         try {
             
                 py::exec(code);
