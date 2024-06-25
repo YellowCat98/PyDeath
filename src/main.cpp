@@ -45,7 +45,8 @@ PyScript runScript() {
             py::scoped_interpreter guard{};
             py::exec(code);
         } catch (const py::error_already_set& e) {
-            log::info("Python Error:\n{}", e.what());
+            PyErr_Print();
+            PyErr_Clear();
         }
         return 1;
     });

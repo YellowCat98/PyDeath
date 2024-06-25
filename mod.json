@@ -17,5 +17,10 @@
 			"type": "file",
 			"default": ""
 		}
+	},
+	"resources": {
+		"files": [
+			"resources/*.py"
+		]
 	}
 }
