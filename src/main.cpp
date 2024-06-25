@@ -47,7 +47,7 @@ struct Fields {
     EventListener<PyScript> gameListener;
 };
     void playerDestroyed(bool p0) {
-
+        py::scoped_interpreter guard{}; // lets initialize the interpreter BEFORE running the task!!!
         std::string code;
         if (getPyScript().empty()) {
             code = R"(
@@ -61,6 +61,7 @@ print(value)
             code = getPyScript();
         }
         m_fields->gameListener.bind([](PyScript::Event* event){});
+        
         m_fields->gameListener.setFilter(runScript(code));
     }
 };
