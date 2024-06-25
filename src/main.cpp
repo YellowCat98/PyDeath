@@ -20,12 +20,14 @@ using PyScript = Task<uint64_t, int>;
 
 PyScript runScript(std::string code) {
     return PyScript::run([code](auto progress, auto called) -> PyScript::Result {
-        py::scoped_interpreter guard{};
+        py::scoped_interpreter guard{}; // hopefully initializing the interpreter before trying to execute works
         try {
-            py::exec(code);
+            
+                py::exec(code);
         } catch (const py::error_already_set& e) {
             log::info("Python Error:\n{}", e.what());
         }
+        return 1;
     });
 }
 
@@ -58,9 +60,7 @@ print(value)
         } else {
             code = getPyScript();
         }
-        m_fields->gameListener.bind([](PyScript::Event* event) {
-            
-        });
+        m_fields->gameListener.bind([](PyScript::Event* event){});
         m_fields->gameListener.setFilter(runScript(code));
     }
 };
